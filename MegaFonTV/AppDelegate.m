@@ -11,6 +11,8 @@
 #import "MenuViewController.h"
 #import "GeneralViewController.h"
 
+#import "UIFont+Din.h"
+
 @implementation AppDelegate
 
 #pragma mark - UIApplicationDelegate
@@ -22,7 +24,12 @@
     
     GeneralViewController *generalVC = [[GeneralViewController alloc] init];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:generalVC];
+    nc.navigationBar.barTintColor = RGB(37, 183, 110);
+    nc.navigationBar.barStyle = UIBarStyleBlack;
+    nc.navigationBar.translucent = NO;
     self.window.rootViewController = nc;
+    
+    [nc.navigationBar setTitleTextAttributes:@{NSFontAttributeName: [UIFont dinRegularFontWithSize:16]}];
     
     return YES;
 }
