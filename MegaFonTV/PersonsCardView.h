@@ -10,4 +10,7 @@
 
 @interface PersonsCardView : UIView
 
++ (instancetype)instantiateFromNib;
++ (UINib *)nib;
+
 @end

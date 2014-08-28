@@ -10,4 +10,7 @@
 
 @interface DetailsCardView : UIView
 
++ (instancetype)instantiateFromNib;
++ (UINib *)nib;
+
 @end

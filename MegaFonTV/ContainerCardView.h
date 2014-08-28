@@ -10,4 +10,6 @@
 
 @interface ContainerCardView : UIView
 
+@property (strong, nonatomic) UIView *contentView;
+
 @end

@@ -10,4 +10,9 @@
 
 @interface GeneralCardView : UIView
 
+@property (copy, nonatomic) void (^playHandler)();
+
++ (instancetype)instantiateFromNib;
++ (UINib *)nib;
+
 @end
