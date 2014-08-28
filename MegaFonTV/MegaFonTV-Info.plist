@@ -24,6 +24,14 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DinCyBd.ttf</string>
+		<string>DinCyBk.ttf</string>
+		<string>DinCyLt.ttf</string>
+		<string>DinCyMd.ttf</string>
+		<string>DinCyRg.ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
