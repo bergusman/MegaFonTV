@@ -33,6 +33,10 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet PageControl *pageControl;
 
+@property (strong, nonatomic) ContainerCardView *generalContainerCardView;
+@property (strong, nonatomic) ContainerCardView *detailsContainerCardView;
+@property (strong, nonatomic) ContainerCardView *personsContainerCardView;
+
 @property (weak, nonatomic) IBOutlet UIView *buttonsView;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
@@ -56,6 +60,11 @@
     [self.likeButton setBackgroundImage:image forState:UIControlStateNormal];
     
     [self.likeButton setImage:[UIImage imageNamed:@"heart-selected"] forState:(UIControlStateSelected | UIControlStateHighlighted)];
+    
+    self.buttonsView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.buttonsView.bounds].CGPath;
+    self.buttonsView.layer.shadowOpacity = 0.4;
+    self.buttonsView.layer.shadowRadius = 8;
+    self.buttonsView.layer.shadowOffset = CGSizeMake(0, 3);
 }
 
 - (void)setupPageControl {
@@ -83,6 +92,7 @@
     };
     containerCardView.contentView = generalCardView;
     containerCardView.center = CGPointMake(160, 190);
+    self.generalContainerCardView = containerCardView;
     [self.scrollView addSubview:containerCardView];
     
     containerCardView = [[ContainerCardView alloc] init];
@@ -90,6 +100,7 @@
     [detailsCardView fillWithMovie:self.movie];
     containerCardView.contentView = detailsCardView;
     containerCardView.center = CGPointMake(320 + 160, 190);
+    self.detailsContainerCardView = containerCardView;
     [self.scrollView addSubview:containerCardView];
     
     containerCardView = [[ContainerCardView alloc] init];
@@ -97,6 +108,7 @@
     [personsCardView fillWithMovie:self.movie];
     containerCardView.contentView = personsCardView;
     containerCardView.center = CGPointMake(640 + 160, 190);
+    self.personsContainerCardView = containerCardView;
     [self.scrollView addSubview:containerCardView];
     
     self.scrollView.contentSize = CGSizeMake(960, 380);
@@ -188,13 +200,15 @@
     
     self.scrollView.alpha = 0;
     self.scrollView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    self.scrollView.clipsToBounds = YES;
+    self.detailsContainerCardView.alpha = 0;
+    self.personsContainerCardView.alpha = 0;
     self.pageControl.alpha = 0;
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.scrollView.alpha = 1;
         self.scrollView.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished) {
-        self.scrollView.clipsToBounds = NO;
+        self.detailsContainerCardView.alpha = 1;
+        self.personsContainerCardView.alpha = 1;
         
         [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.pageControl.alpha = 1;
