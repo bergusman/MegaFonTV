@@ -120,6 +120,11 @@
 #pragma mark - Actions
 
 - (IBAction)hideButton:(id)sender {
+    if ([[self.hideButton titleForState:UIControlStateNormal] isEqualToString:@"Скрыть из выдачи"]) {
+        [self.hideButton setTitle:@"Показывать" forState:UIControlStateNormal];
+    } else {
+        [self.hideButton setTitle:@"Скрыть из выдачи" forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)closeButton:(id)sender {
