@@ -7,9 +7,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController">
             <connections>
                 <outlet property="blurImageView" destination="KlU-e8-Pvj" id="edC-gp-nKU"/>
+                <outlet property="buttonsView" destination="vAZ-Ds-NEj" id="MnK-xp-k92"/>
+                <outlet property="buyButton" destination="V4J-eO-JLJ" id="Zyv-lY-aOL"/>
                 <outlet property="closeButton" destination="vZZ-bo-ojx" id="f37-2x-afd"/>
                 <outlet property="dimImageView" destination="2gm-Ph-PeW" id="eBa-Kb-64l"/>
                 <outlet property="hideButton" destination="aEO-ED-qkP" id="g5o-8o-eeU"/>
+                <outlet property="likeButton" destination="Ysi-oY-yND" id="UM2-le-EkQ"/>
+                <outlet property="pageControl" destination="c22-Ic-TWb" id="WH6-gN-JtU"/>
                 <outlet property="scrollView" destination="Az1-Oe-wHA" id="EgX-7d-02O"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -62,6 +66,34 @@
                 <view contentMode="scaleToFill" id="c22-Ic-TWb" userLabel="Page Control" customClass="PageControl">
                     <rect key="frame" x="0.0" y="453" width="320" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="vAZ-Ds-NEj">
+                    <rect key="frame" x="30" y="494" width="260" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V4J-eO-JLJ" userLabel="Buy Button" customClass="DinButton">
+                            <rect key="frame" x="0.0" y="1" width="216" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <state key="normal" title="Купить за 399 руб.">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyAction:" destination="-1" eventType="touchUpInside" id="mnP-fN-xc0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ysi-oY-yND" userLabel="Like Button">
+                            <rect key="frame" x="216" y="0.0" width="44" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="likeAction:" destination="-1" eventType="touchUpInside" id="ys5-vQ-5pe"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>

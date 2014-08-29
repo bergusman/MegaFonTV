@@ -15,6 +15,8 @@
 
 #import "PageControl.h"
 
+#import "Movie.h"
+
 #import <UIImageEffects/UIImage+ImageEffects.h>
 #import <MediaPlayer/MediaPlayer.h>
 
@@ -29,6 +31,12 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet PageControl *pageControl;
 
+@property (weak, nonatomic) IBOutlet UIView *buttonsView;
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+
+@property (strong, nonatomic) Movie *movie;
+
 @property (assign, nonatomic) BOOL dismissing;
 
 @end
@@ -38,6 +46,13 @@
 #pragma mark - Setups
 
 #pragma mark - Content
+
+- (void)loadMovie {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Movie.json" withExtension:@""];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    self.movie = [Movie movieWithJSON:json];
+}
 
 - (void)fillCards {
     ContainerCardView *containerCardView;
@@ -52,12 +67,16 @@
     [self.scrollView addSubview:containerCardView];
     
     containerCardView = [[ContainerCardView alloc] init];
-    containerCardView.contentView = [DetailsCardView instantiateFromNib];
+    DetailsCardView *detailsCardView = [DetailsCardView instantiateFromNib];
+    [detailsCardView fillWithMovie:self.movie];
+    containerCardView.contentView = detailsCardView;
     containerCardView.center = CGPointMake(320 + 160, 190);
     [self.scrollView addSubview:containerCardView];
     
     containerCardView = [[ContainerCardView alloc] init];
-    containerCardView.contentView = [PersonsCardView instantiateFromNib];
+    PersonsCardView *personsCardView = [PersonsCardView instantiateFromNib];
+    [personsCardView fillWithMovie:self.movie];
+    containerCardView.contentView = personsCardView;
     containerCardView.center = CGPointMake(640 + 160, 190);
     [self.scrollView addSubview:containerCardView];
     
@@ -77,6 +96,12 @@
 
 - (IBAction)closeButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)buyAction:(id)sender {
+}
+
+- (IBAction)likeAction:(id)sender {
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -122,11 +147,16 @@
     self.scrollView.alpha = 0;
     self.scrollView.transform = CGAffineTransformMakeScale(0.1, 0.1);
     self.scrollView.clipsToBounds = YES;
+    self.pageControl.alpha = 0;
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.scrollView.alpha = 1;
         self.scrollView.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished) {
         self.scrollView.clipsToBounds = NO;
+        
+        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.pageControl.alpha = 1;
+        } completion:nil];
     }];
     
     self.hideButton.center = CGPointMake(self.hideButton.center.x, -40);
@@ -137,6 +167,11 @@
     self.closeButton.center = CGPointMake(self.closeButton.center.x, -40);
     [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.closeButton.center = CGPointMake(self.closeButton.center.x, 43);
+    } completion:nil];
+    
+    self.buttonsView.center = CGPointMake(self.buttonsView.center.x, 568 + 52);
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.buttonsView.center = CGPointMake(self.buttonsView.center.x, 516);
     } completion:nil];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -174,6 +209,8 @@
         self.closeButton.alpha = 0;
         self.scrollView.alpha = 0;
         self.scrollView.transform = CGAffineTransformMakeScale(3, 3);
+        self.pageControl.alpha = 0;
+        self.buttonsView.alpha = 0;
     } completion:nil];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -219,6 +256,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadMovie];
     [self fillCards];
 }
 

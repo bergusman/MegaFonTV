@@ -47,6 +47,11 @@
 		AD60984D19AFBD9D00DAB572 /* card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60984C19AFBD9D00DAB572 /* card@2x.png */; };
 		AD60984F19AFC00A00DAB572 /* general.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD60984E19AFC00A00DAB572 /* general.jpg */; };
 		AD60985319AFCA2600DAB572 /* Movie.json in Resources */ = {isa = PBXBuildFile; fileRef = AD60985219AFCA2600DAB572 /* Movie.json */; };
+		AD60985619B0417C00DAB572 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60985519B0417C00DAB572 /* Movie.m */; };
+		AD60985D19B043F900DAB572 /* DetailsTextCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60985B19B043F900DAB572 /* DetailsTextCardCell.m */; };
+		AD60985E19B043F900DAB572 /* DetailsTextCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60985C19B043F900DAB572 /* DetailsTextCardCell.xib */; };
+		AD60986219B0440E00DAB572 /* DetailsCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60986019B0440E00DAB572 /* DetailsCardCell.m */; };
+		AD60986319B0440E00DAB572 /* DetailsCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60986119B0440E00DAB572 /* DetailsCardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +121,14 @@
 		AD60984C19AFBD9D00DAB572 /* card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card@2x.png"; sourceTree = "<group>"; };
 		AD60984E19AFC00A00DAB572 /* general.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = general.jpg; sourceTree = "<group>"; };
 		AD60985219AFCA2600DAB572 /* Movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Movie.json; sourceTree = "<group>"; };
+		AD60985419B0417C00DAB572 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		AD60985519B0417C00DAB572 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		AD60985A19B043F900DAB572 /* DetailsTextCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsTextCardCell.h; sourceTree = "<group>"; };
+		AD60985B19B043F900DAB572 /* DetailsTextCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsTextCardCell.m; sourceTree = "<group>"; };
+		AD60985C19B043F900DAB572 /* DetailsTextCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsTextCardCell.xib; sourceTree = "<group>"; };
+		AD60985F19B0440E00DAB572 /* DetailsCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsCardCell.h; sourceTree = "<group>"; };
+		AD60986019B0440E00DAB572 /* DetailsCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsCardCell.m; sourceTree = "<group>"; };
+		AD60986119B0440E00DAB572 /* DetailsCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsCardCell.xib; sourceTree = "<group>"; };
 		C02077722FC447A0AF7D4288 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -241,6 +254,8 @@
 		AD6097E819ADB76300DAB572 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AD60985419B0417C00DAB572 /* Movie.h */,
+				AD60985519B0417C00DAB572 /* Movie.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -427,6 +442,12 @@
 		AD60985019AFC63F00DAB572 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AD60985F19B0440E00DAB572 /* DetailsCardCell.h */,
+				AD60986019B0440E00DAB572 /* DetailsCardCell.m */,
+				AD60986119B0440E00DAB572 /* DetailsCardCell.xib */,
+				AD60985A19B043F900DAB572 /* DetailsTextCardCell.h */,
+				AD60985B19B043F900DAB572 /* DetailsTextCardCell.m */,
+				AD60985C19B043F900DAB572 /* DetailsTextCardCell.xib */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -524,6 +545,8 @@
 				AD60985319AFCA2600DAB572 /* Movie.json in Resources */,
 				AD6097C819ADB58800DAB572 /* Images.xcassets in Resources */,
 				AD60984D19AFBD9D00DAB572 /* card@2x.png in Resources */,
+				AD60985E19B043F900DAB572 /* DetailsTextCardCell.xib in Resources */,
+				AD60986319B0440E00DAB572 /* DetailsCardCell.xib in Resources */,
 				AD60984419AFAC8200DAB572 /* DinCyLt.ttf in Resources */,
 				AD60984319AFAC8200DAB572 /* DinCyBk.ttf in Resources */,
 				AD60984F19AFC00A00DAB572 /* general.jpg in Resources */,
@@ -585,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD60985D19B043F900DAB572 /* DetailsTextCardCell.m in Sources */,
 				AD6097C619ADB58800DAB572 /* AppDelegate.m in Sources */,
 				AD60984919AFB07C00DAB572 /* DinButton.m in Sources */,
 				AD60980919ADBABB00DAB572 /* ContainerCardView.m in Sources */,
@@ -597,7 +621,9 @@
 				AD60983A19AF999F00DAB572 /* PageControl.m in Sources */,
 				AD6097C219ADB58800DAB572 /* main.m in Sources */,
 				AD60980219ADBA1800DAB572 /* StarsView.m in Sources */,
+				AD60985619B0417C00DAB572 /* Movie.m in Sources */,
 				AD6097F719ADB97E00DAB572 /* GeneralViewController.m in Sources */,
+				AD60986219B0440E00DAB572 /* DetailsCardCell.m in Sources */,
 				AD60980C19ADBAD200DAB572 /* GeneralCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
