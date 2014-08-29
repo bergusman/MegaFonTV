@@ -10,4 +10,6 @@
 
 @interface StarsView : UIView
 
+@property (assign, nonatomic) NSInteger stars;
+
 @end

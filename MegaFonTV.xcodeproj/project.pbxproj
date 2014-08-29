@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CAF2C63223D41C692A01481 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C02077722FC447A0AF7D4288 /* libPods.a */; };
+		AD42042519B105D400F50C13 /* star-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD42042319B105D400F50C13 /* star-selected@2x.png */; };
+		AD42042619B105D400F50C13 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD42042419B105D400F50C13 /* star@2x.png */; };
 		AD6097B619ADB58800DAB572 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6097B519ADB58800DAB572 /* Foundation.framework */; };
 		AD6097B819ADB58800DAB572 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6097B719ADB58800DAB572 /* CoreGraphics.framework */; };
 		AD6097BA19ADB58800DAB572 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6097B919ADB58800DAB572 /* UIKit.framework */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		0ED815ED8F87419E90914FE5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AD42042319B105D400F50C13 /* star-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-selected@2x.png"; sourceTree = "<group>"; };
+		AD42042419B105D400F50C13 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		AD6097B219ADB58800DAB572 /* MegaFonTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaFonTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6097B519ADB58800DAB572 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD6097B719ADB58800DAB572 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -310,7 +314,6 @@
 		AD6097ED19ADB78600DAB572 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				AD60981419ADBB7400DAB572 /* Like */,
 				AD6097FE19ADB9EB00DAB572 /* Stars */,
 				AD6097FF19ADBA0500DAB572 /* Cards */,
 				AD6097F919ADB99100DAB572 /* DetailsViewController.h */,
@@ -389,13 +392,6 @@
 			name = Persons;
 			sourceTree = "<group>";
 		};
-		AD60981419ADBB7400DAB572 /* Like */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Like;
-			sourceTree = "<group>";
-		};
 		AD60982F19AF8DE800DAB572 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +437,8 @@
 		AD60983C19AFAC0800DAB572 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AD42042319B105D400F50C13 /* star-selected@2x.png */,
+				AD42042419B105D400F50C13 /* star@2x.png */,
 				AD60986D19B0671800DAB572 /* heart@2x.png */,
 				AD60986919B0670A00DAB572 /* heart-selected@2x.png */,
 				AD60984E19AFC00A00DAB572 /* general.jpg */,
@@ -587,7 +585,9 @@
 				AD60986B19B0670A00DAB572 /* heart-selected@2x.png in Resources */,
 				AD60981B19ADBC2700DAB572 /* GeneralCardView.xib in Resources */,
 				AD60986E19B0671800DAB572 /* heart@2x.png in Resources */,
+				AD42042519B105D400F50C13 /* star-selected@2x.png in Resources */,
 				AD60984219AFAC8200DAB572 /* DinCyBd.ttf in Resources */,
+				AD42042619B105D400F50C13 /* star@2x.png in Resources */,
 				AD60984519AFAC8200DAB572 /* DinCyMd.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
