@@ -15,6 +15,8 @@
 
 #import "PageControl.h"
 
+#import "UIImage+Drawing.h"
+
 #import "Movie.h"
 
 #import <UIImageEffects/UIImage+ImageEffects.h>
@@ -36,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @property (strong, nonatomic) Movie *movie;
+@property (assign, nonatomic) BOOL payed;
 
 @property (assign, nonatomic) BOOL dismissing;
 
@@ -44,6 +47,22 @@
 @implementation DetailsViewController
 
 #pragma mark - Setups
+
+- (void)setupButtons {
+    UIImage *image = [UIImage solidImageWithSize:self.buyButton.bounds.size color:RGBA(104, 49, 149, 0.9)];
+    [self.buyButton setBackgroundImage:image forState:UIControlStateNormal];
+    
+    image = [UIImage solidImageWithSize:self.likeButton.bounds.size color:RGBA(37, 183, 110, 0.8)];
+    [self.likeButton setBackgroundImage:image forState:UIControlStateNormal];
+    
+    [self.likeButton setImage:[UIImage imageNamed:@"heart-selected"] forState:(UIControlStateSelected | UIControlStateHighlighted)];
+}
+
+- (void)setupPageControl {
+    self.pageControl.dotStep = 20;
+    self.pageControl.currentDotImage = [UIImage dot1WithColor:RGB(121, 121, 121)];
+    self.pageControl.dotImage = [UIImage dot2WithColor:RGB(121, 121, 121)];
+}
 
 #pragma mark - Content
 
@@ -81,9 +100,18 @@
     [self.scrollView addSubview:containerCardView];
     
     self.scrollView.contentSize = CGSizeMake(960, 380);
+    self.pageControl.numberOfPages = 3;
+    self.pageControl.currentPage = 0;
 }
 
 - (void)playTrailer {
+    NSString *videoUrl = @"http://46.182.26.14/mftv/trailer.mp4";
+    MPMoviePlayerViewController *playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:videoUrl]];
+    [self presentMoviePlayerViewControllerAnimated:playerVC];
+}
+
+- (void)playMovie {
+    
     NSString *videoUrl = @"http://46.182.26.14/mftv/trailer.mp4";
     MPMoviePlayerViewController *playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:videoUrl]];
     [self presentMoviePlayerViewControllerAnimated:playerVC];
@@ -99,9 +127,18 @@
 }
 
 - (IBAction)buyAction:(id)sender {
+    if (self.payed) {
+        [self playMovie];
+    } else {
+        self.payed = YES;
+        [UIView animateWithDuration:0.2 animations:^{
+            [self.buyButton setTitle:@"Смотреть" forState:UIControlStateNormal];
+        }];
+    }
 }
 
 - (IBAction)likeAction:(id)sender {
+    self.likeButton.selected = !self.likeButton.selected;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -256,6 +293,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupButtons];
+    [self setupPageControl];
     [self loadMovie];
     [self fillCards];
 }

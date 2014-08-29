@@ -73,9 +73,10 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V4J-eO-JLJ" userLabel="Buy Button" customClass="DinButton">
-                            <rect key="frame" x="0.0" y="1" width="216" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="216" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Купить за 399 руб.">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -86,9 +87,10 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ysi-oY-yND" userLabel="Like Button">
                             <rect key="frame" x="216" y="0.0" width="44" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal">
+                            <state key="normal" image="heart.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected" image="heart-selected.png"/>
                             <connections>
                                 <action selector="likeAction:" destination="-1" eventType="touchUpInside" id="ys5-vQ-5pe"/>
                             </connections>
@@ -102,4 +104,8 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="heart-selected.png" width="20" height="19"/>
+        <image name="heart.png" width="20" height="19"/>
+    </resources>
 </document>

@@ -52,6 +52,9 @@
 		AD60985E19B043F900DAB572 /* DetailsTextCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60985C19B043F900DAB572 /* DetailsTextCardCell.xib */; };
 		AD60986219B0440E00DAB572 /* DetailsCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60986019B0440E00DAB572 /* DetailsCardCell.m */; };
 		AD60986319B0440E00DAB572 /* DetailsCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60986119B0440E00DAB572 /* DetailsCardCell.xib */; };
+		AD60986619B061A000DAB572 /* UIImage+Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60986519B061A000DAB572 /* UIImage+Drawing.m */; };
+		AD60986B19B0670A00DAB572 /* heart-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60986919B0670A00DAB572 /* heart-selected@2x.png */; };
+		AD60986E19B0671800DAB572 /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60986D19B0671800DAB572 /* heart@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +132,10 @@
 		AD60985F19B0440E00DAB572 /* DetailsCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsCardCell.h; sourceTree = "<group>"; };
 		AD60986019B0440E00DAB572 /* DetailsCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsCardCell.m; sourceTree = "<group>"; };
 		AD60986119B0440E00DAB572 /* DetailsCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsCardCell.xib; sourceTree = "<group>"; };
+		AD60986419B061A000DAB572 /* UIImage+Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Drawing.h"; sourceTree = "<group>"; };
+		AD60986519B061A000DAB572 /* UIImage+Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Drawing.m"; sourceTree = "<group>"; };
+		AD60986919B0670A00DAB572 /* heart-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-selected@2x.png"; sourceTree = "<group>"; };
+		AD60986D19B0671800DAB572 /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
 		C02077722FC447A0AF7D4288 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -394,6 +401,8 @@
 			children = (
 				AD60983019AF901200DAB572 /* UIFont+Din.h */,
 				AD60983119AF901200DAB572 /* UIFont+Din.m */,
+				AD60986419B061A000DAB572 /* UIImage+Drawing.h */,
+				AD60986519B061A000DAB572 /* UIImage+Drawing.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -432,6 +441,8 @@
 		AD60983C19AFAC0800DAB572 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AD60986D19B0671800DAB572 /* heart@2x.png */,
+				AD60986919B0670A00DAB572 /* heart-selected@2x.png */,
 				AD60984E19AFC00A00DAB572 /* general.jpg */,
 				AD60984C19AFBD9D00DAB572 /* card@2x.png */,
 				AD60984A19AFBAEB00DAB572 /* play-button@2x.png */,
@@ -442,12 +453,8 @@
 		AD60985019AFC63F00DAB572 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				AD60985F19B0440E00DAB572 /* DetailsCardCell.h */,
-				AD60986019B0440E00DAB572 /* DetailsCardCell.m */,
-				AD60986119B0440E00DAB572 /* DetailsCardCell.xib */,
-				AD60985A19B043F900DAB572 /* DetailsTextCardCell.h */,
-				AD60985B19B043F900DAB572 /* DetailsTextCardCell.m */,
-				AD60985C19B043F900DAB572 /* DetailsTextCardCell.xib */,
+				AD60986719B061D300DAB572 /* Singleline Cell */,
+				AD60986819B061EB00DAB572 /* Multiline Cell */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -458,6 +465,26 @@
 				AD60985219AFCA2600DAB572 /* Movie.json */,
 			);
 			name = Jsons;
+			sourceTree = "<group>";
+		};
+		AD60986719B061D300DAB572 /* Singleline Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AD60985F19B0440E00DAB572 /* DetailsCardCell.h */,
+				AD60986019B0440E00DAB572 /* DetailsCardCell.m */,
+				AD60986119B0440E00DAB572 /* DetailsCardCell.xib */,
+			);
+			name = "Singleline Cell";
+			sourceTree = "<group>";
+		};
+		AD60986819B061EB00DAB572 /* Multiline Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AD60985A19B043F900DAB572 /* DetailsTextCardCell.h */,
+				AD60985B19B043F900DAB572 /* DetailsTextCardCell.m */,
+				AD60985C19B043F900DAB572 /* DetailsTextCardCell.xib */,
+			);
+			name = "Multiline Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,7 +581,9 @@
 				AD60984B19AFBAEB00DAB572 /* play-button@2x.png in Resources */,
 				AD60984619AFAC8200DAB572 /* DinCyRg.ttf in Resources */,
 				AD6097F819ADB97E00DAB572 /* GeneralViewController.xib in Resources */,
+				AD60986B19B0670A00DAB572 /* heart-selected@2x.png in Resources */,
 				AD60981B19ADBC2700DAB572 /* GeneralCardView.xib in Resources */,
+				AD60986E19B0671800DAB572 /* heart@2x.png in Resources */,
 				AD60984219AFAC8200DAB572 /* DinCyBd.ttf in Resources */,
 				AD60984519AFAC8200DAB572 /* DinCyMd.ttf in Resources */,
 			);
@@ -620,6 +649,7 @@
 				AD6097F219ADB96D00DAB572 /* MenuViewController.m in Sources */,
 				AD60983A19AF999F00DAB572 /* PageControl.m in Sources */,
 				AD6097C219ADB58800DAB572 /* main.m in Sources */,
+				AD60986619B061A000DAB572 /* UIImage+Drawing.m in Sources */,
 				AD60980219ADBA1800DAB572 /* StarsView.m in Sources */,
 				AD60985619B0417C00DAB572 /* Movie.m in Sources */,
 				AD6097F719ADB97E00DAB572 /* GeneralViewController.m in Sources */,
