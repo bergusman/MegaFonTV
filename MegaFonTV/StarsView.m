@@ -46,7 +46,7 @@
         [starButton setImage:[UIImage imageNamed:@"star"] forState:UIControlStateNormal];
         [starButton setImage:[UIImage imageNamed:@"star-selected"] forState:UIControlStateSelected];
         [starButton setImage:[UIImage imageNamed:@"star-selected"] forState:UIControlStateSelected | UIControlStateHighlighted];
-        starButton.frame = CGRectMake(0, 0, 17, 17);
+        starButton.frame = CGRectMake(0, 0, 24, 44);
         [starButton addTarget:self action:@selector(starAction:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:starButton];
