@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Movie;
+
 @interface PersonsCardView : UIView
+
+- (void)fillWithMovie:(Movie *)movie;
 
 + (instancetype)instantiateFromNib;
 + (UINib *)nib;

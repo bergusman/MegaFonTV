@@ -10,10 +10,11 @@
             <rect key="frame" x="0.0" y="0.0" width="260" height="380"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ZoJ-cw-gDv">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ZoJ-cw-gDv">
                     <rect key="frame" x="0.0" y="0.0" width="260" height="380"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="iN0-l3-epB" id="uBI-1V-PgZ"/>
                         <outlet property="delegate" destination="iN0-l3-epB" id="yZf-Se-2tR"/>
@@ -22,6 +23,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tableView" destination="ZoJ-cw-gDv" id="JsS-hB-ogh"/>
+            </connections>
         </view>
     </objects>
 </document>
